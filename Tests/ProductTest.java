@@ -1,7 +1,10 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
     Product product = new Product();
+    Medewerker medewerker = new Medewerker();
 
     @org.junit.jupiter.api.Test
     void berekenKorting() {
@@ -34,5 +37,17 @@ class ProductTest {
         product.berekenKorting();
         assertEquals(0.90,product.getKortingVerzekering());
 
+    }
+
+    @Test
+    void bepaalverzekeringsPrijs() {
+        //om true te behalen moet isIngelogdTrue zijn, isVerhuurd van product false en isVerzekerd True
+        assertFalse(product.isBepaalverzekeringsPrijs(false,false,false));
+        assertFalse(product.isBepaalverzekeringsPrijs(false,false,true));
+        assertFalse(product.isBepaalverzekeringsPrijs(false,true,false));
+        assertFalse(product.isBepaalverzekeringsPrijs(false,true,true));
+        assertFalse(product.isBepaalverzekeringsPrijs(true,false,false));
+        assertFalse(product.isBepaalverzekeringsPrijs(true,true,false));
+        assertTrue(product.isBepaalverzekeringsPrijs(true,true,true));
     }
 }

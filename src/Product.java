@@ -10,6 +10,21 @@ public class Product {
     private double totalePrijs; //prijs incl of excl verzkering. Per product is er een andere berekening.
     private boolean isVerhuurd; //of de productbeschikbaar is of niet
 
+    public boolean isBepaalverzekeringsPrijs(boolean isVerhuurd, boolean isVerzekerd, boolean isIngelogd) {
+        if(isVerhuurd && isVerzekerd && isIngelogd)
+        setBepaalverzekeringsPrijs(true);
+        else{
+            setBepaalverzekeringsPrijs(false);
+        }
+        return bepaalverzekeringsPrijs;
+    }
+
+    public void setBepaalverzekeringsPrijs(boolean bepaalverzekeringsPrijs) {
+        this.bepaalverzekeringsPrijs = bepaalverzekeringsPrijs;
+    }
+
+    private boolean bepaalverzekeringsPrijs;
+
     public Product() {
         this.id = id;
         this.huurPrijs = huurPrijs;
@@ -40,6 +55,14 @@ public class Product {
     }
     public double berekenTotaleprijs(){
         return totalePrijs;
+    }
+
+    public void setVerzekerd(boolean verzekerd) {
+        isVerzekerd = verzekerd;
+    }
+
+    public void setVerhuurd(boolean verhuurd) {
+        isVerhuurd = verhuurd;
     }
 
     public boolean isVerhuurd() {
