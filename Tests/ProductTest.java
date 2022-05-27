@@ -50,4 +50,22 @@ class ProductTest {
         assertFalse(product.isBepaalverzekeringsPrijs(true,true,false));
         assertTrue(product.isBepaalverzekeringsPrijs(true,true,true));
     }
+
+    @Test
+    void testObserver(){
+        Product product1 = new Personenauto("BMW",500);
+
+        Subscriber s1 = new Subscriber("Tom");
+        Subscriber s2 = new Subscriber("Gizem");
+
+
+        product1.subscribe(s1);
+        product1.subscribe(s2);
+
+        s1.subscribeProduct(product1);
+        s2.subscribeProduct(product1);
+
+        product1.setVerhuurd(false);
+        product1.opVoorraad();
+    }
 }

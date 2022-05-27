@@ -1,14 +1,18 @@
-public class Product {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Product implements Subject{
     private int id; //om de product te onderscheiden
     private double huurPrijs; //prijs van de product per dag
     private boolean isVerzekerd; //of de product is verzekerd
 
-    private int dagenVerzekerd; // aantal dagen dat de product is verzekerd
+    private int dagenVerzekerd; // Aantal dagen dat het product is verzekerd
 
+    private double kortingVerzekering; //Korting na 15, 30 en 50 dagen verzekering. 5% - 10% - 15%
+    private double totalePrijs; //Prijs incl. of excl. verzekering. Per product is er een andere berekening.
+    private boolean isVerhuurd; //of de product beschikbaar is of niet
 
-    private double kortingVerzekering; // korting na 15, 30 en 50 dagen verzekering. 5% - 10% - 15%
-    private double totalePrijs; //prijs incl of excl verzkering. Per product is er een andere berekening.
-    private boolean isVerhuurd; //of de productbeschikbaar is of niet
+    private List<Subscriber> subscriberList = new ArrayList<>();
 
     public boolean isBepaalverzekeringsPrijs(boolean isVerhuurd, boolean isVerzekerd, boolean isIngelogd) {
         if(isVerhuurd && isVerzekerd && isIngelogd)
@@ -85,5 +89,33 @@ public class Product {
 
     public void setKortingVerzekering(double kortingVerzekering) {
         this.kortingVerzekering = kortingVerzekering;
+    }
+
+    @Override
+    public void subscribe(Subscriber sub) {
+        subscriberList.add(sub);
+
+    }
+
+    @Override
+    public void unsubscribe(Subscriber sub) {
+        subscriberList.remove(sub);
+
+    }
+
+    @Override
+    public void opVoorraad() {
+//        if(isVerhuurd = false){
+//            notifySubscribers();
+//        }
+        notifySubscribers();
+    }
+
+
+    @Override
+    public void notifySubscribers() {
+        for(Subscriber subscriber : subscriberList){
+            subscriber.update();
+        }
     }
 }
