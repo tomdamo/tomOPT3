@@ -66,6 +66,6 @@ class ProductTest {
         s2.subscribeProduct(product1);
 
         product1.setVerhuurd(false);
-        product1.opVoorraad();
+        product1.notifySubscribers();
     }
 }
