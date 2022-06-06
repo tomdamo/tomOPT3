@@ -7,8 +7,9 @@ public abstract class Product implements Subject{
     private boolean isVerhuurd; //of de product beschikbaar is of niet
     private double huurprijs;
 
-    public void setPrijs(){
-
+    public final void productSetup(){
+        //methodes
+        //abstract methoden die de subclasses zelf implementeren
     }
 
     public Product() {
