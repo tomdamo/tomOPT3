@@ -3,22 +3,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
-    Product pAuto1 = new Personenauto(1000, "BMW",500);
-    Product pAuto2 = new Personenauto(1001,"Ford",600);
-    Product pAuto3 = new Personenauto(1002,"Opel",700);
+    Product pAuto1 = new Personenauto();
+    Product pAuto2 = new Personenauto();
+    Product pAuto3 = new Personenauto();
 
-    Product boor1 = new Boormachine(2000,"Bosch","drill");
-    Product boor2 = new Boormachine(2001,"Lidl","klop");
-    Product boor3 = new Boormachine(2002,"DeWalt","hamer");
+    Product boor1 = new Boormachine();
+    Product boor2 = new Boormachine();
+    Product boor3 = new Boormachine();
 
-    Product vAuto1 = new Vrachtauto(3000,25000,2000);
-    Product vAuto2 = new Vrachtauto(3001,35000,3000);
-    Product vAuto3 = new Vrachtauto(3002,40000,3500);
+    Product vAuto1 = new Vrachtauto();
+    Product vAuto2 = new Vrachtauto();
+    Product vAuto3 = new Vrachtauto();
 
     ProductVerzekering product1 = new ProductVerzekering();
     VerzekeringKorting productVerzekerd = new VerzekeringKorting();
 
     Medewerker medewerker = new Medewerker();
+
 
     @org.junit.jupiter.api.Test
     void berekenKorting() {
@@ -67,5 +68,15 @@ class ProductTest {
         pAuto2.setVerhuurd(false);
         pAuto1.notifySubscribers();
         pAuto2.notifySubscribers();
+    }
+    @Test
+    void testFactory(){
+        ProductFactory productF = new ProductFactory();
+
+        productF.makeProduct("personenauto");
+        assertEquals( productF.makeProduct("personenauto").getClass(), pAuto1.getClass());
+        assertEquals( productF.makeProduct("vrachtauto").getClass(), vAuto1.getClass());
+        assertEquals( productF.makeProduct("boormachine").getClass(), boor1.getClass());
+
     }
 }

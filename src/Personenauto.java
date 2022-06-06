@@ -8,12 +8,45 @@ public class Personenauto extends Product{
     private double verzekeringPrijs;
     private double totalePrijs; //Prijs incl. of excl. verzekering. Per product is er een andere berekening.
 
-    public Personenauto(int id, String merk, int gewicht) {
+    public Personenauto() {
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public void setMerk(String merk) {
         this.merk = merk;
+    }
+
+    public int getGewicht() {
+        return gewicht;
+    }
+
+    public void setGewicht(int gewicht) {
         this.gewicht = gewicht;
     }
 
+    public double getVerzekeringPrijs() {
+        return verzekeringPrijs;
+    }
+
+    public void setVerzekeringPrijs(double verzekeringPrijs) {
+        this.verzekeringPrijs = verzekeringPrijs;
+    }
+
+    public double getTotalePrijs() {
+        return totalePrijs;
+    }
+
+    public void setTotalePrijs(double totalePrijs) {
+        this.totalePrijs = totalePrijs;
+    }
 
     public String getMerk() {
         return merk;
