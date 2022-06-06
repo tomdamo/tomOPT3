@@ -8,6 +8,21 @@ public class Personenauto extends Product{
     private double verzekeringPrijs;
     private double totalePrijs; //Prijs incl. of excl. verzekering. Per product is er een andere berekening.
 
+    @Override
+    void selectProductType() {
+
+    }
+
+    @Override
+    void createPrice() {
+
+    }
+
+    @Override
+    void createVerzekering() {
+
+    }
+
     public Personenauto() {
 
     }

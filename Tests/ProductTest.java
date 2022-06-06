@@ -79,4 +79,8 @@ class ProductTest {
         assertEquals( productF.makeProduct("boormachine").getClass(), boor1.getClass());
 
     }
+    @Test
+    void testTemplateMethod(){
+        vAuto1.productSetup();
+    }
 }

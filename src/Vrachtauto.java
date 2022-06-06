@@ -5,6 +5,21 @@ public class Vrachtauto extends Product {
     //prijs is 0,10 euro per kg laadvermogen
     //verzekering is ook 0,01 euro per kg per dag van de gewicht van de auto
 
+    @Override
+    void selectProductType() {
+
+    }
+
+    @Override
+    void createPrice() {
+
+    }
+
+    @Override
+    void createVerzekering() {
+
+    }
+
     public Vrachtauto() {
 
     }
@@ -17,7 +32,7 @@ public class Vrachtauto extends Product {
         this.id = id;
     }
 
-    public int getLaadvermogen() {
+    public int getLaadvermogen()     {
         return laadvermogen;
     }
 

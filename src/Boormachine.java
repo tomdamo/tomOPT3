@@ -3,6 +3,21 @@ public class Boormachine extends Product {
     private String merk;
     private String type;
 
+    @Override
+    void selectProductType() {
+
+    }
+
+    @Override
+    void createPrice() {
+
+    }
+
+    @Override
+    void createVerzekering() {
+
+    }
+
     public Boormachine() {
 
     }

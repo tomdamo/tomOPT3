@@ -1,4 +1,4 @@
-public class ProductFactory extends Product {
+public class ProductFactory {
     public Product makeProduct(String newProductType){
 
         Product newProduct = null;
