@@ -1,20 +1,32 @@
 public class Boormachine extends Product {
-    private int id;
     private String merk;
     private String type;
 
-    public Boormachine() {
+    private static int huurprijsPD = 5;
+    private static int verzekeringprijsPD = 1;
+    public Boormachine(String merk, String type) {
+        super();
+        this.merk = merk;
+        this.type = type;
 
+    }
+
+    @Override
+    public double berekenHuur(int aantalDagen) {
+        return 0;
+    }
+
+    @Override
+    public double berekenVerzekering(int aantalDagen) {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return null;
     }
 //prijs is 5 euro per dag, verz. 1 euro per dag.
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getMerk() {
         return merk;

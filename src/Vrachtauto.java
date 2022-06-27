@@ -1,20 +1,29 @@
 public class Vrachtauto extends Product {
-    private int id;
     private int laadvermogen;
     private int gewicht;
     //prijs is 0,10 euro per kg laadvermogen
     //verzekering is ook 0,01 euro per kg per dag van de gewicht van de auto
 
-    public Vrachtauto() {
+    public Vrachtauto(int laadvermogen, int gewicht) {
+        super();
+        this.laadvermogen = laadvermogen;
+        this.gewicht = gewicht;
 
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public double berekenHuur(int aantalDagen) {
+        return 0;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public double berekenVerzekering(int aantalDagen) {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return null;
     }
 
     public int getLaadvermogen() {

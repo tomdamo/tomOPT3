@@ -2,8 +2,8 @@ public class Subscriber implements Observer {
 
     private String naam;
 
-    private Product product = new Personenauto();
-//1000,"BMW",500
+    private Product product = new Personenauto("",0);
+
     public Subscriber(String naam){
         this.naam = naam;
     }

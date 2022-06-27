@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public abstract class Product implements Subject{
     private List<Subscriber> subscriberList = new ArrayList<>();
 
+
+    private UUID id;
     private boolean isVerhuurd; //of de product beschikbaar is of niet
     private double huurprijs;
 
@@ -13,13 +16,21 @@ public abstract class Product implements Subject{
     }
 
     public Product() {
+        this.id = UUID.randomUUID();
     }
+
+    public abstract double berekenHuur(int aantalDagen);
+    public abstract double berekenVerzekering(int aantalDagen);
 
     public void setVerhuurd ( boolean verhuurd){
         isVerhuurd = verhuurd;
     }
 
+    public abstract String toString();
 
+    public UUID getId() {
+        return id;
+    }
 
     @Override
     public void subscribe(Subscriber sub) {

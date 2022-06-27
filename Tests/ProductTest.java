@@ -3,17 +3,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
-    Product pAuto1 = new Personenauto();
-    Product pAuto2 = new Personenauto();
-    Product pAuto3 = new Personenauto();
+    Product pAuto1 = new Personenauto("BMW",500);
+    Product pAuto2 = new Personenauto("Citroen",900);
+    Product pAuto3 = new Personenauto("Opel", 750);
 
-    Product boor1 = new Boormachine();
-    Product boor2 = new Boormachine();
-    Product boor3 = new Boormachine();
+    Product boor1 = new Boormachine("Bosch", "Drill");
+    Product boor2 = new Boormachine("Lidl","Knoop");
+    Product boor3 = new Boormachine("Gamma","Grond");
 
-    Product vAuto1 = new Vrachtauto();
-    Product vAuto2 = new Vrachtauto();
-    Product vAuto3 = new Vrachtauto();
+    Product vAuto1 = new Vrachtauto(50000,7500);
+    Product vAuto2 = new Vrachtauto(75000,10000);
+    Product vAuto3 = new Vrachtauto(10000,2000);
 
     ProductVerzekering product1 = new ProductVerzekering();
     VerzekeringKorting productVerzekerd = new VerzekeringKorting();
