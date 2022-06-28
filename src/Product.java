@@ -9,24 +9,35 @@ public abstract class Product implements Subject{
 
 
     private int id;
-    private boolean bestaat;
+    private boolean bestaat; //voor de AtomicInteger
     private boolean isVerhuurd; //of de product beschikbaar is of niet
-
+    private String verhuurd;
     public final void productSetup(){
         //methodes
         //abstract methoden die de subclasses zelf implementeren
     }
 
+    public String getVerhuurd() {
+        return verhuurd;
+    }
+
     public Product() {
         bestaat = false;
         id = count.incrementAndGet();
+        isVerhuurd = false;
+        verhuurd = "Beschikbaar";
     }
 
     public abstract double berekenHuur(int aantalDagen);
     public abstract double berekenVerzekering(int aantalDagen);
 
-    public void setVerhuurd ( boolean verhuurd){
-        isVerhuurd = verhuurd;
+    public void setVerhuurd (boolean huren){
+        if (huren = true){
+            verhuurd = "Onbeschikbaar";
+        }
+        if (huren = false) {
+            verhuurd = "Beschikbaar";
+        }
     }
 
     public abstract String toString();

@@ -5,7 +5,7 @@ public class Personenauto extends Product{
     //prijs is 50 per dag,
     //verzekering is gewicht van de auto, 0,01 euro per kg per dag.
     private static double verzekeringPrijsPD = 0.01;
-    private static double totalePrijs = 50; //Prijs incl. of excl. verzekering. Per product is er een andere berekening.
+    private static double huurPrijs = 50;
 
     public Personenauto(String merk, int gewicht) {
         super();
@@ -16,7 +16,7 @@ public class Personenauto extends Product{
 
     @Override
     public double berekenHuur(int aantalDagen) {
-        return 0;
+        return huurPrijs * aantalDagen;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Personenauto extends Product{
 
     @Override
     public String toString() {
-        return String.format("%d, %s, gewicht: %d kg", getId(), merk, gewicht);
+        return String.format("%d, %s, gewicht: %d kg, %s", getId(), merk, gewicht, getVerhuurd());
     }
 
 
