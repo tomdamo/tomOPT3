@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class Product implements Subject{
     private List<Subscriber> subscriberList = new ArrayList<>();
+    private static final AtomicInteger count = new AtomicInteger(0);
 
 
-    private UUID id;
+    private int id;
+    private boolean bestaat;
     private boolean isVerhuurd; //of de product beschikbaar is of niet
-    private double huurprijs;
 
     public final void productSetup(){
         //methodes
@@ -16,7 +18,8 @@ public abstract class Product implements Subject{
     }
 
     public Product() {
-        this.id = UUID.randomUUID();
+        bestaat = false;
+        id = count.incrementAndGet();
     }
 
     public abstract double berekenHuur(int aantalDagen);
@@ -28,7 +31,7 @@ public abstract class Product implements Subject{
 
     public abstract String toString();
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 

@@ -5,8 +5,8 @@ import java.util.UUID;
 public abstract class ProductVoorraad <T extends Product> {
     private final List<T> voorraad = new ArrayList<>();
 
-    public T getProduct(UUID id){
-        return voorraad.stream().filter(p -> p.getId().equals(id))
+    public T getProduct(int id){
+        return voorraad.stream().filter(p -> p.getId() == (id))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Product niet gevonden"));
     }

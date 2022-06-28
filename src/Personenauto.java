@@ -27,7 +27,7 @@ public class Personenauto extends Product{
 
     @Override
     public String toString() {
-        return String.format("%s, gewicht: %d kg", merk, gewicht);
+        return String.format("%d, %s, gewicht: %d kg", getId(), merk, gewicht);
     }
 
 
