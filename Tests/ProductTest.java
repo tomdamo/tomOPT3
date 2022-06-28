@@ -18,7 +18,6 @@ class ProductTest {
     ProductVerzekering product1 = new ProductVerzekering();
     VerzekeringKorting productVerzekerd = new VerzekeringKorting();
 
-    Medewerker medewerker = new Medewerker();
 
 
     @org.junit.jupiter.api.Test
