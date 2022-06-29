@@ -35,14 +35,26 @@ class ProductTest {
 
     @Test
     void bepaalverzekeringsPrijs() {
-        //om true te behalen moet isIngelogdTrue zijn, isVerhuurd van product false en isVerzekerd True
-        assertFalse(product1.isBepaalverzekeringsPrijs(false,false,false));
-        assertFalse(product1.isBepaalverzekeringsPrijs(false,false,true));
-        assertFalse(product1.isBepaalverzekeringsPrijs(false,true,false));
-        assertFalse(product1.isBepaalverzekeringsPrijs(false,true,true));
         assertFalse(product1.isBepaalverzekeringsPrijs(true,false,false));
-        assertFalse(product1.isBepaalverzekeringsPrijs(true,true,false));
+        assertFalse(product1.isBepaalverzekeringsPrijs(false,true,false));
+        assertFalse(product1.isBepaalverzekeringsPrijs(false,false,true));
         assertTrue(product1.isBepaalverzekeringsPrijs(true,true,true));
+    }
+    @Test
+    void testLandingKosten() {
+        Vliegtuig vl1 = new Vliegtuig(500,1,true,true);
+        Vliegtuig vl2 = new Vliegtuig(500,2,false,false);
+        Vliegtuig vl3 = new Vliegtuig(1200,1,false,true);
+        Vliegtuig vl4 = new Vliegtuig(1200,2,true,false);
+        Vliegtuig vl5 = new Vliegtuig(5100,1,true,true);
+        Vliegtuig vl6 = new Vliegtuig(5100,2,false,false);
+        assertEquals(1121.0,vl1.berekenLanding(vl1));
+        assertEquals(1271.0,vl2.berekenLanding(vl2));
+        assertEquals(2405.0,vl3.berekenLanding(vl3));
+        assertEquals(3155.0,vl4.berekenLanding(vl4));
+        assertEquals(8825.0,vl5.berekenLanding(vl5));
+        assertEquals(12575.0,vl6.berekenLanding(vl6));
+
     }
 
     @Test
